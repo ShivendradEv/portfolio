@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Shojumaru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --body_background: #fff;
+    --theme_color: #6E07F3;
+    --text_color: #fff;
+    --link_color: blue;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--body_background);
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+a {
+    color: var(--link_color);
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    color: var(--theme_color);
+}
+
+.btn {
+    border: 2px solid var(--theme_color);
+    border-radius: 100px;
+    padding: 14px 20px;
+    color: var(--theme_color);
+    transition: all .5s ease;
+}
+
+.btn:hover {
+    background: var(--theme_color);
+    color: var(--text_color) !important;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: calc(1344px + 5%);
+    margin: 0 auto;
+    position: relative;
+    padding: 0 5%;
+}

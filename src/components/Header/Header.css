@@ -1,0 +1,52 @@
+.navbar {
+    width: 100%;
+    max-width: calc(1344px + 5%);
+    padding: 30px 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-brand a {
+    font-family: "Shojumaru", system-ui;
+    color: var(--theme_color);
+    font-size: 48px;
+    line-height: 1;
+}
+
+.navbar ul {
+    margin-left: auto;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin-left: 15px;
+}
+
+.navbar ul li a {
+    color: var(--text_color);
+    font-weight: 400;
+    text-transform: capitalize;
+    transition: all .5s ease;
+}
+
+.navbar ul li a:hover {
+    color: var(--theme_color);
+}
+
+.navbar ul li:last-child a {
+    margin-left: 10px;
+}
