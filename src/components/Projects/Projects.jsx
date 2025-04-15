@@ -3,25 +3,25 @@ import "./Project.css";
 
 const data = [
     {
-        title: "O2 mobile shop",
-        image: "o2.png",
+        title: "Todo app",
+        image: "todo.png",
         linkTitle: "Visit site",
         linkIcon: "chevron-forward-outline.png",
-        linkUrl: "https://businessshop.o2.co.uk/store/o2-business.html"
+        linkUrl: "https://github.com/ShivendradEv/todo-app"
     },
     {
-        title: "PGE",
-        image: "pge.png",
+        title: "Movie search",
+        image: "search.png",
         linkTitle: "Visit site",
         linkIcon: "chevron-forward-outline.png",
-        linkUrl: "https://pge.com/"
+        linkUrl: "https://github.com/ShivendradEv/movie-search"
     },
     {
-        title: "Toyota spare parts",
-        image: "toyota.png",
+        title: "Gaming landing page",
+        image: "theme.jpg",
         linkTitle: "Visit site",
         linkIcon: "chevron-forward-outline.png",
-        linkUrl: "https://autoparts.toyota.com/"
+        linkUrl: "https://github.com/ShivendradEv/theme"
     }
 ]
 
@@ -33,9 +33,9 @@ const Projects = () => {
     }, [])
 
     return (
-        <div className='container'>
+        <div className='container' id='projects'>
             <div className='projects'>
-                <h2 className='heading'>Recent projects</h2>
+                <h2 className='heading'>Personal Projects</h2>
                 <div className='project-grid'>
                     {projects?.map((item, index) => (
                         <div className='project-card' key={index}>

@@ -1,5 +1,5 @@
 .projects {
-    padding: 0 0 60px 0;
+    padding: 60px 0 0;
 }
 
 .project-grid {
@@ -12,10 +12,6 @@
     border-radius: 4px;
     overflow: hidden;
     transition: all .3s ease;
-}
-
-.project-grid .project-card:hover {
-    margin-top: -10px;
 }
 
 .project-grid .project-card .thumbnail {
@@ -53,10 +49,6 @@
     transition: all .5s ease;
 }
 
-.project-grid .project-card .content a:hover img {
-    margin-left: 10px;
-}
-
 @media(max-width: 1199px) {
     .project-grid .project-card .thumbnail {
         height: 200px;
@@ -73,5 +65,19 @@
 @media(max-width:480px) {
     .project-grid {
         grid-template-columns: 1fr;
+    }
+
+    .projects {
+        padding: 40px 0 0;
+    }
+}
+
+@media(min-width:1200px) {
+    .project-grid .project-card:hover {
+        margin-top: -10px;
+    }
+
+    .project-grid .project-card .content a:hover img {
+        margin-left: 10px;
     }
 }

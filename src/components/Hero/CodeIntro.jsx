@@ -3,12 +3,12 @@ import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const CodeIntro = () => {
   const codeString = `class Person {
-  constructor() {
-    this.name = "Shivendra Singh";
-    this.experience = "6 years";
-    this.age = new Date().getFullYear() - 1996;
-  }
-}`;
+    constructor() {
+      this.name = "Shivendra Singh";
+      this.experience = "6 years";
+      this.hobby = "Building UIs and gaming";
+    }
+  }`;
 
   return (
     <SyntaxHighlighter language="javascript" style={oneDark}>
