@@ -5,8 +5,6 @@ const Header = () => {
 
     const [active, setActive] = useState(false);
 
-    console.log(active)
-
     return (
         <div className='container'>
             <nav className='navbar'>

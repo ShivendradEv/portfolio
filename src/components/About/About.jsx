@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className='container'>
             <div className='about'>
-                <h2>About me</h2>
+                <h2 className='heading'>About me</h2>
                 <p>
                     Hi! I'm a Frontend Developer with over 5.7 years of experience building high-performance, user-focused web applications — primarily in the e-commerce space. I specialize in modern JavaScript frameworks like React, and I'm skilled in Redux, TypeScript, and Next.js for building scalable, maintainable frontends.
                 </p>

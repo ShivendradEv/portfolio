@@ -61,8 +61,21 @@ img {
     padding: 0 5%;
 }
 
+.heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text_color);
+    border-bottom: 4px solid #6e07f3;
+    width: fit-content;
+    margin: 0 0 30px;
+}
+
 @media(max-width: 480px) {
     body {
         font-size: 14px;
+    }
+
+    .heading {
+        font-size: 2.3rem;
     }
 }
