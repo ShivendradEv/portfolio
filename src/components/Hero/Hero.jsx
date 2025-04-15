@@ -23,13 +23,14 @@ const Hero = () => {
                                 />
                             </h1>
                             <p>I build sleek, responsive web experiences with modern technologies like React, TypeScript, and Tailwind. Let's turn ideas into beautiful interfaces!</p>
-                            <a href='#' className='btn'>Download resume</a>
+                            <a href='Shivendra_Singh_Resume_Frontend_Developer.pdf' download className='btn'>Download resume</a>
                         </div>
                         <div className='thumbnail'>
                             <CodeIntro />
                         </div>
                     </div>
                 </div>
+                <button type='button' className='scroll'><img src='scroll-down.png' alt='scroll down icon' /></button>
             </div>
         </>
     )

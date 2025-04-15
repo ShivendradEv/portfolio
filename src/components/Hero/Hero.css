@@ -7,6 +7,30 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+.hero .scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    opacity: 0.7;
+    animation: scaleUpDown 3s ease-in-out infinite;
+}
+
+@keyframes scaleUpDown {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .hero-top {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -37,4 +61,74 @@
 .hero-top .thumbnail pre {
     padding: 40px !important;
     margin: 0 !important;
+}
+
+@media(max-width: 1600px) {
+    .hero-top p {
+        width: 80%;
+    }
+
+    .hero-top h1 span,
+    .hero-top h1 {
+        font-size: 44px;
+    }
+}
+
+@media(max-width: 1199px) {
+    .hero-top p {
+        width: 90%;
+    }
+
+    .hero-top h1 span,
+    .hero-top h1 {
+        font-size: 38px;
+    }
+
+    .hero-top .thumbnail pre {
+        padding: 20px !important;
+    }
+}
+
+@media(max-width: 991px) {
+    .hero-top {
+        grid-template-columns: unset;
+    }
+
+    .hero-top .content {
+        text-align: center;
+    }
+
+    .hero-top p {
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-top .thumbnail {
+        margin-top: 60px;
+    }
+}
+
+@media(max-width: 767px) {
+    .hero-top p {
+        width: 90%;
+    }
+}
+
+@media(max-width: 480px) {
+
+    .hero-top h1 span,
+    .hero-top h1 {
+        font-size: 28px;
+    }
+
+    .hero-top p {
+        width: 100%;
+    }
+
+    .hero-top .thumbnail pre {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto !important;
+    }
 }

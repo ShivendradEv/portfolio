@@ -24,8 +24,11 @@
     line-height: 1;
 }
 
-.navbar ul {
+.navbar .navbar-menu {
     margin-left: auto;
+}
+
+.navbar ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -49,4 +52,80 @@
 
 .navbar ul li:last-child a {
     margin-left: 10px;
+}
+
+.navbar .navbar-menu-icons {
+    display: none;
+}
+
+.navbar .close,
+.navbar .menu {
+    display: none;
+    width: 30px;
+}
+
+@media(max-width: 991px) {
+
+    .navbar .menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .navbar .close {
+        display: block;
+        margin-left: auto;
+    }
+
+    .navbar .navbar-menu-icons {
+        display: flex;
+        padding: 30px 5%;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar .navbar-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: radial-gradient(circle, #000, #0b001a);
+        margin: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all .5s ease;
+    }
+
+    .navbar .navbar-menu.active {
+        left: 0;
+        opacity: 1;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 100%;
+        position: relative;
+        top: -11%;
+    }
+
+    .navbar ul li {
+        margin: 14px 0;
+    }
+}
+
+@media(max-width: 480px) {
+    .navbar .navbar-brand a {
+        font-size: 34px;
+    }
+
+    .navbar .navbar-menu-icons,
+    .navbar {
+        padding: 15px 5%;
+    }
 }

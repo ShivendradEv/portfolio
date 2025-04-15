@@ -29,6 +29,13 @@ a:hover {
     color: var(--theme_color);
 }
 
+button {
+    padding: 0;
+    background: unset;
+    border: unset;
+    cursor: pointer;
+}
+
 .btn {
     border: 2px solid var(--theme_color);
     border-radius: 100px;
@@ -51,4 +58,10 @@ img {
     margin: 0 auto;
     position: relative;
     padding: 0 5%;
+}
+
+@media(max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
 }
