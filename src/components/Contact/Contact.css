@@ -9,6 +9,13 @@
     border-radius: 10px;
     overflow: hidden;
     line-height: 0;
+    height: 500px;
+}
+
+.contact-main .thumbnail iframe {
+    border: 0;
+    width: 100%;
+    height: 500px;
 }
 
 .contact-main .thumbnail img {
@@ -52,6 +59,7 @@
 .contact .btn {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
+    margin-top: 20px;
 }
 
 @media(max-width: 991px) {

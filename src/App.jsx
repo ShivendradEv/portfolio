@@ -11,6 +11,21 @@ import { useMobileLandscape } from './util/useMobileLandscape'
 
 function App() {
   const isMobileLandscape = useMobileLandscape();
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Show button after scrolling 300px
+  const handleScroll = () => {
+    setIsVisible(window.scrollY > 300);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
       <Header />
@@ -20,6 +35,11 @@ function App() {
       <Contact />
       <Footer />
       {isMobileLandscape && <RotateDevice />}
+      {isVisible && (
+        <button type='button' onClick={scrollToTop} className="scroll-top">
+          <img src='chevron-up-outline.png' alt='chevron up outline' />
+        </button>
+      )}
     </>
   )
 }
