@@ -52,6 +52,10 @@
     border-color: var(--theme_color);
 }
 
+.contact .form-group .form-control.error-input {
+    border-color: red;
+}
+
 .contact .form-group textarea.form-control {
     min-height: 200px;
 }

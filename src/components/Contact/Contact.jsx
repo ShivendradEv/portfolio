@@ -38,12 +38,12 @@ const Contact = () => {
                     <h2 className='heading'>Contact Me</h2>
                     <div className='form-group'>
                         <label htmlFor="name">Name</label>
-                        <input type='text' className='form-control' id='name' name='name' {...register("name", { required: true })} />
+                        <input type='text' className={`form-control ${errors.name ? "error-input" : ""}`} id='name' name='name' {...register("name", { required: true })} />
                         {errors.name && <span className='error-msg'>This field is required.</span>}
                     </div>
                     <div className='form-group'>
                         <label htmlFor="email">Email</label>
-                        <input type='text' className='form-control' id='email' name='email' {...register("email", {
+                        <input type='text' className={`form-control ${errors.email ? "error-input" : ""}`} id='email' name='email' {...register("email", {
                             required: "This field is required.",
                             pattern: {
                                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -54,7 +54,7 @@ const Contact = () => {
                     </div>
                     <div className='form-group'>
                         <label htmlFor="message">Message</label>
-                        <textarea type='text' className='form-control' id='message' name='message' placeholder='Type your message...' {...register("message", { required: true })} />
+                        <textarea type='text' className={`form-control ${errors.message ? "error-input" : ""}`} id='message' name='message' placeholder='Type your message...' {...register("message", { required: true })} />
                         {errors.message && <span className='error-msg'>This field is required.</span>}
                     </div>
                     <div className='captcha'>
