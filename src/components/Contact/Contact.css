@@ -62,6 +62,12 @@
     margin-top: 20px;
 }
 
+.contact .error-msg {
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
 @media(max-width: 991px) {
     .contact-main {
         flex-direction: column;
