@@ -67,7 +67,7 @@ const Contact = () => {
     return (
         <>
             <div className={`thankyou-msg ${success ? "show" : ""}`}>
-                <button type='button' className='close' onClick={() => setSuccsess(false)}><img src='/portfolio/close.png' alt='close icon' /></button>
+                <button type='button' className='close' onClick={() => setSuccsess(false)}><img src='close.png' alt='close icon' /></button>
                 <h2>🎉 Thank You!</h2>
                 <p>
                     Your message has been sent successfully.
@@ -76,7 +76,7 @@ const Contact = () => {
                 </p>
             </div>
             <div className={`error-msg ${error ? "show" : ""}`}>
-                <button type='button' className='close' onClick={() => setError(false)}><img src='/portfolio/close.png' alt='close icon' /></button>
+                <button type='button' className='close' onClick={() => setError(false)}><img src='close.png' alt='close icon' /></button>
                 <h2>⚠️ Error</h2>
                 <p>
                     🙁 Something went wrong. Please try again.

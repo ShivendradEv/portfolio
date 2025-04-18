@@ -4,23 +4,23 @@ import "./Project.css";
 const data = [
     {
         title: "Todo app",
-        image: "/portfolio/todo.png",
+        image: "todo.png",
         linkTitle: "Visit site",
-        linkIcon: "/portfolio/chevron-forward-outline.png",
+        linkIcon: "chevron-forward-outline.png",
         linkUrl: "https://github.com/ShivendradEv/todo-app"
     },
     {
         title: "Movie search",
-        image: "/portfolio/search.png",
+        image: "search.png",
         linkTitle: "Visit site",
-        linkIcon: "/portfolio/chevron-forward-outline.png",
+        linkIcon: "chevron-forward-outline.png",
         linkUrl: "https://github.com/ShivendradEv/movie-search"
     },
     {
         title: "Gaming landing page",
-        image: "/portfolio/theme.jpg",
+        image: "theme.jpg",
         linkTitle: "Visit site",
-        linkIcon: "/portfolio/chevron-forward-outline.png",
+        linkIcon: "chevron-forward-outline.png",
         linkUrl: "https://github.com/ShivendradEv/theme"
     }
 ]
