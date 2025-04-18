@@ -30,7 +30,7 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
-                <a href='#about' className='scroll'><img src='scroll-down.png' alt='scroll down icon' /></a>
+                <a href='#about' className='scroll'><img src='/portfolio/scroll-down.png' alt='scroll down icon' /></a>
             </div>
         </>
     )

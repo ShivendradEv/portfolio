@@ -67,7 +67,7 @@ const Contact = () => {
     return (
         <>
             <div className={`thankyou-msg ${success ? "show" : ""}`}>
-                <button type='button' className='close' onClick={() => setSuccsess(false)}><img src='close.png' alt='close icon' /></button>
+                <button type='button' className='close' onClick={() => setSuccsess(false)}><img src='/portfolio/close.png' alt='close icon' /></button>
                 <h2>🎉 Thank You!</h2>
                 <p>
                     Your message has been sent successfully.
@@ -76,7 +76,7 @@ const Contact = () => {
                 </p>
             </div>
             <div className={`error-msg ${error ? "show" : ""}`}>
-                <button type='button' className='close' onClick={() => setError(false)}><img src='close.png' alt='close icon' /></button>
+                <button type='button' className='close' onClick={() => setError(false)}><img src='/portfolio/close.png' alt='close icon' /></button>
                 <h2>⚠️ Error</h2>
                 <p>
                     🙁 Something went wrong. Please try again.
@@ -118,7 +118,8 @@ const Contact = () => {
                         <button type='submit' className='btn'>Submit</button>
                     </form>
                     <div className='thumbnail'>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3561.333740949082!2d80.9524250762582!3d26.79749997671615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQ3JzUxLjAiTiA4MMKwNTcnMTguMCJF!5e0!3m2!1sen!2sin!4v1744788424697!5m2!1sen!2sin" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112284.47952060572!2d76.90768011501149!3d28.422576296946016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1744992597528!5m2!1sen!2sin" loading="lazy"></iframe>
+                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3561.333740949082!2d80.9524250762582!3d26.79749997671615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQ3JzUxLjAiTiA4MMKwNTcnMTguMCJF!5e0!3m2!1sen!2sin!4v1744788424697!5m2!1sen!2sin" loading="lazy"></iframe> */}
                     </div>
                 </div>
             </div>
