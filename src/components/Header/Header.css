@@ -89,13 +89,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        opacity: 0;
         transition: all .5s ease;
     }
 
     .navbar .navbar-menu.active {
         left: 0;
-        opacity: 1;
     }
 
     .navbar ul {
