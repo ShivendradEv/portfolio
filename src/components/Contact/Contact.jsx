@@ -19,34 +19,48 @@ const Contact = () => {
     const [error, setError] = useState(false);
     const captchaRef = useRef();
 
-    const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
-
-    useEffect(() => {
-        const todayDate = new Date().toISOString().split('T')[0];
-        const todayTime = new Date().toTimeString().split(' ')[0];
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        setValue("date", todayDate);
-        setValue("time", todayTime);
-        setValue("timezone", timezone);
-    }, [setValue]);
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = async (data) => {
         setFormSubmitted(true);
         if (!captchaVerified) return;
         setLoading(true);
+
+        const now = new Date();
+        data.date = now.toISOString().split('T')[0];
+        data.time = now.toTimeString().split(' ')[0];
+        data.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        const firestorePromise = addDoc(collection(db, "contact"), data);
+        const emailPromise = emailjs.send(serviceId, templateId, data, publicKey);
+
         try {
-            await addDoc(collection(db, "contact"), data);
-            await emailjs.send(
-                serviceId,
-                templateId,
-                data,
-                publicKey
-            );
-            setSuccsess(true);
-            reset();
-            captchaRef.current.reset();
+            const results = await Promise.allSettled([firestorePromise, emailPromise]);
+
+            const firestoreResult = results[0];
+            const emailResult = results[1];
+
+            let hasError = false;
+
+            if (firestoreResult.status === "rejected") {
+                console.error("Firestore Error:", firestoreResult.reason);
+                hasError = true;
+            }
+
+            if (emailResult.status === "rejected") {
+                console.error("EmailJS Error:", emailResult.reason);
+                hasError = true;
+            }
+
+            if (!hasError) {
+                setSuccsess(true);
+                reset();
+                captchaRef.current.reset();
+            } else {
+                setError(true);
+            }
         } catch (err) {
-            console.error("Error:", err);
+            console.error("Unexpected Error:", err);
             setError(true);
         } finally {
             setLoading(false);
@@ -113,13 +127,14 @@ const Contact = () => {
                         </div>
                         <div className='captcha'>
                             <ReCAPTCHA sitekey="6Lf89xorAAAAAPMMS3x7R8TKEe-g1oebwcTgTmN5" onChange={onChange} ref={captchaRef} />
+                            {/* Test key */}
+                            {/* <ReCAPTCHA sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} ref={captchaRef} /> */}
                             {!captchaVerified && formSubmitted && <span className='error-field'>Please verify the CAPTCHA.</span>}
                         </div>
                         <button type='submit' className='btn'>Submit</button>
                     </form>
                     <div className='thumbnail'>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112284.47952060572!2d76.90768011501149!3d28.422576296946016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1744992597528!5m2!1sen!2sin" loading="lazy"></iframe>
-                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3561.333740949082!2d80.9524250762582!3d26.79749997671615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQ3JzUxLjAiTiA4MMKwNTcnMTguMCJF!5e0!3m2!1sen!2sin!4v1744788424697!5m2!1sen!2sin" loading="lazy"></iframe> */}
                     </div>
                 </div>
             </div>
